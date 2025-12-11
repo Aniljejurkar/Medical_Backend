@@ -1,10 +1,9 @@
-package Medical_Coding.Medical.repository;
+package Medical_Coding.repository;
 
-import Medical_Coding.Medical.model.User;
+import Medical_Coding.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends MongoRepository<User, String> {
-    // Optional: custom query methods
 }

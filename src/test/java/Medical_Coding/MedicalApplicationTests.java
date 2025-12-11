@@ -1,4 +1,4 @@
-package Medical_Coding.Medical;
+package Medical_Coding;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package Medical_Coding.Medical;
+package Medical_Coding;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

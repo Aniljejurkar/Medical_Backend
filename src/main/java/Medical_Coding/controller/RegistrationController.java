@@ -1,17 +1,20 @@
-package Medical_Coding.Medical.controller;
+package Medical_Coding.controller;
 
-import Medical_Coding.Medical.model.User;
-import Medical_Coding.Medical.service.UserService;
-import lombok.RequiredArgsConstructor;
+import Medical_Coding.model.User;
+import Medical_Coding.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/register")
-@RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:5173") // Allow React frontend
+@CrossOrigin(origins = "http://localhost:5173")
 public class RegistrationController {
 
     private final UserService userService;
+
+    // Constructor injection (no Lombok)
+    public RegistrationController(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostMapping
     public User registerUser(@RequestBody User user) {
