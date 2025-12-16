@@ -1,6 +1,7 @@
 package Medical_Coding.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "users")
@@ -9,9 +10,11 @@ public class User {
     @Id
     private String id;
     private String fullName;
+    @Indexed(unique = true)
     private String email;
     private String countryCode;
     private String mobile;
+    private String password;
 
     public User() {
     }
@@ -37,6 +40,9 @@ public class User {
     public String getCountryCode() { return countryCode; }
     public void setCountryCode(String countryCode) { this.countryCode = countryCode; }
 
-    public String getMobile() { return mobile; }
-    public void setMobile(String mobile) { this.mobile = mobile; }
+    public String getMobile() {  return password; }
+    public void setMobile(String password) { this.password = password; }
+
+    public String getPassword() { return mobile; }
+    public void setPassword(String mobile) { this.mobile = mobile; }
 }
