@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")  // allow all endpoints
-                        .allowedOrigins("http://localhost:5173", "https://medical-coding-frontend.vercel.app")
+                        .allowedOrigins("http://localhost:5173", "https://medical-coding-frontend.vercel.app", "https://medcode.tech")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
