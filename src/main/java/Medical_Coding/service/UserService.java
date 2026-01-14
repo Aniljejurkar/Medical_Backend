@@ -4,6 +4,8 @@ import Medical_Coding.model.User;
 import Medical_Coding.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -57,5 +59,25 @@ public class UserService {
         user.setPassword(null); // hide password
         return user;
     }
+//   get all useres
+public List<User> getAllUsers() {
+    return userRepository.findAll();
+}
+
+    // ================= GET USER BY ID =================
+    public User getUserById(String id) {
+
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
+
+        user.setPassword(null); // hide password
+        return user;
+    }
+
+
+
 
 }
+
+
+

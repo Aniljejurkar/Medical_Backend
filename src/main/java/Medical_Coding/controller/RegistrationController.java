@@ -5,6 +5,8 @@ import Medical_Coding.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class RegistrationController {
@@ -36,4 +38,27 @@ public class RegistrationController {
         return ResponseEntity.ok(loggedInUser);
 
     }
+
+
+//       for all user
+
+    @GetMapping("/users")
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.getAllUsers();
+
+        // hide passwords
+        users.forEach(user -> user.setPassword(null));
+
+        return ResponseEntity.ok(users);
+    }
+
+
+    // ================= GET USER BY ID =================
+    @GetMapping("/users/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable String id) {
+
+        User user = userService.getUserById(id);
+        return ResponseEntity.ok(user);
+    }
+
 }

@@ -43,6 +43,6 @@ public class User {
     public String getMobile() {  return password; }
     public void setMobile(String password) { this.password = password; }
 
-    public String getPassword() { return mobile; }
-    public void setPassword(String mobile) { this.mobile = mobile; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 }
