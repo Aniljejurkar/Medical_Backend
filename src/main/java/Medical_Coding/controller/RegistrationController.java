@@ -21,6 +21,7 @@ public class RegistrationController {
     // ================= REGISTER API =================
     @PostMapping("/register")
     public User registerUser(@RequestBody User user) {
+        System.out.println("from backend controller : "+user);
         return userService.registerUser(user);
     }
 
